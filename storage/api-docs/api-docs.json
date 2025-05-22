@@ -1,0 +1,89 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My First API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/telegram/webhook": {
+            "post": {
+                "tags": [
+                    "Telegram"
+                ],
+                "summary": "Handle Telegram webhook",
+                "operationId": "43153ed9037f884b9187a032d9db7277",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "message": {
+                                        "properties": {
+                                            "from": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 11111111
+                                                    },
+                                                    "first_name": {
+                                                        "type": "string",
+                                                        "example": "Anton"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "chat": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 11111111
+                                                    },
+                                                    "first_name": {
+                                                        "type": "string",
+                                                        "example": "Anton"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "text": {
+                                                "type": "string",
+                                                "example": "/start"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Webhook handled successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Telegram",
+            "description": "Telegram"
+        }
+    ]
+}
